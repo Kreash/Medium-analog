@@ -12,6 +12,10 @@
           <p>Создано: {{story.createdAt | date}}</p>
         </div>
         <div class="card-footer-item">
+          <b-icon icon="hand-right"></b-icon>
+          <p class="card-footer-item">Хлопки: {{story.claps}}</p>
+        </div>
+        <div class="card-footer-item">
           <b-icon icon="file-edit-outline"></b-icon>
           <a @click="editStory" class="card-footer-item">Изменить</a>
         </div>
@@ -21,7 +25,6 @@
         </div>
       </footer>
     </div>
-    <hr />
   </div>
 </template>
 
@@ -34,8 +37,8 @@ export default Vue.extend({
   },
   filters: {
     date: (date: number) => {
-      const time = new Date(date).toISOString()
-      return time.slice(0, 10) + ' ' + time.slice(11, 16);
+      const time = new Date(date).toISOString();
+      return time.slice(0, 10) + " " + time.slice(11, 16);
     },
   },
   methods: {

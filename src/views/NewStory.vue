@@ -16,11 +16,27 @@
       <hr />
 
       <b-field horizontal>
-        <!-- Label left empty for spacing -->
         <p class="control">
           <button class="button is-primary" @click="handleSubmit(submit)">Publish story</button>
         </p>
       </b-field>
+
+      <section>
+        <b-modal v-model="isComponentModalActive" has-modal-card :can-cancel="true">
+          <div class="modal-card" style="width: auto">
+            <header class="modal-card-head">
+              <p class="modal-card-title">История успешно создана</p>
+            </header>
+            <footer class="modal-card-foot">
+              <button
+                class="button is-primary"
+                type="button"
+                @click="isComponentModalActive = false"
+              >Accept</button>
+            </footer>
+          </div>
+        </b-modal>
+      </section>
     </section>
   </ValidationObserver>
 </template>
@@ -50,6 +66,7 @@ interface Story {
 export default Vue.extend({
   props: {},
   data: () => ({
+    isComponentModalActive: false,
     valid: true,
     title: "",
     description: "",
@@ -64,8 +81,6 @@ export default Vue.extend({
       this.createStory();
     },
     createStory() {
-      // eslint-disable-next-line
-      // (this.$refs.form as any).validate();
       if (this.valid) {
         firebase
           .database()
@@ -104,6 +119,7 @@ export default Vue.extend({
         updateAt: Date.now(),
         userId: 1,
       });
+      this.isComponentModalActive = true;
       this.resetForm();
     },
     resetForm() {

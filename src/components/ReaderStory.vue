@@ -15,7 +15,6 @@
         </div>
       </footer>
     </div>
-    <hr />
   </div>
 </template>
 

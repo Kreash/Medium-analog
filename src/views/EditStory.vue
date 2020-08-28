@@ -26,7 +26,6 @@
 </template>
 
 
-
 <script lang="ts">
 import Vue from "vue";
 import firebase from "firebase/app";
@@ -34,7 +33,7 @@ import store from "@/store";
 import { ValidationObserver, ValidationProvider } from "vee-validate";
 import { required, email } from "vee-validate/dist/rules";
 import { extend } from "vee-validate";
-import { currentConfig } from 'vee-validate/dist/types/config';
+import { currentConfig } from "vee-validate/dist/types/config";
 
 extend("required", {
   ...required,
@@ -57,7 +56,7 @@ export default Vue.extend({
       console.log(currentStory);
       currentStory.title = this.title;
       currentStory.description = this.description;
-      currentStory.updateAt = Date.now()
+      currentStory.updateAt = Date.now();
       firebase.database().ref(`/posts/${currentStory.id}`).set(currentStory);
       this.$router.push("/writer");
     },

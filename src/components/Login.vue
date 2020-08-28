@@ -93,20 +93,16 @@ export default Vue.extend({
       this.login(this.loginData);
     },
     login(loginData){
-
       const formData = {
         email: loginData.email,
         password: loginData.password
       }
         this.$store.dispatch('login', formData).then((user) => {
           this.$router.push('/' + user.role)
-
         }).catch (err => {
           console.log(err)
         }) 
-
       this.isComponentModalActive = false;
-
     }
   }
 });

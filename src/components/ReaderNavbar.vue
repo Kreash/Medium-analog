@@ -12,24 +12,8 @@
           <h1>role: {{role}}</h1>
         </div>
       </b-navbar-item>
-      <b-navbar-item tag="div">
-        <div>
-          <b-icon icon="magnify"></b-icon>
-        </div>
-      </b-navbar-item>
-      <b-navbar-item tag="div">
-        <div>
-          <b-icon icon="bookmark-multiple-outline"></b-icon>
-        </div>
-      </b-navbar-item>
-      <b-navbar-item tag="div">
-        <div>
-          <b-icon icon="bell-outline"></b-icon>
-        </div>
-      </b-navbar-item>
       <b-navbar-dropdown label="More">
-        <b-navbar-item href="#">Stories</b-navbar-item>
-        <b-navbar-item href="#">Profile</b-navbar-item>
+        <b-navbar-item href="/reader">Stories</b-navbar-item>
         <b-navbar-item @click="logout()">Sign out</b-navbar-item>
       </b-navbar-dropdown>
     </template>

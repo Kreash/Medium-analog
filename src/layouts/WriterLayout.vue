@@ -2,7 +2,6 @@
   <div class="app-main-layout">
     <writer-navbar @click="isOpen = !isOpen" />
 
-
     <div class="columns">
       <div class="column"></div>
       <div class="column is-four-fifths">
