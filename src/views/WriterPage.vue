@@ -11,7 +11,7 @@
         aria-page-label="Page"
         aria-current-label="Current page"
       >
-        <b-table-column field="story" width="40" sortable numeric v-slot="props">
+        <b-table-column field="story" width="40" v-slot="props">
           <writer-story @updateData="updateData" v-bind:story="props.row" />
         </b-table-column>
       </b-table>
@@ -52,9 +52,6 @@ export default Vue.extend({
           for (const key in stories) {
             stories2.push(stories[key]);
           }
-          stories2.forEach((story) => {
-            console.log(story.createdAt);
-          });
           this.$data.stories = stories2;
           this.isLoading = false;
         });
