@@ -11,7 +11,7 @@
         aria-page-label="Page"
         aria-current-label="Current page"
       >
-        <b-table-column field="story" width="40" sortable numeric v-slot="props">
+        <b-table-column field="story" width="40" v-slot="props">
           <start-story v-bind:story="props.row" />
         </b-table-column>
       </b-table>
